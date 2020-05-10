@@ -12,6 +12,23 @@ let transporter = nodemailer.createTransport({
     pass: "123456" // generated ethereal password
   }
 });
+
+
+///mine
+
+
+// const transporter = nodemailer.createTransport({
+//   host: 'smtp.ethereal.email',
+//   port: 587,
+//   auth: {
+//       user: 'eve.mcdermott97@ethereal.email',
+//       pass: 'ku2TzURz7JV8H6Cp8a'
+//   }
+// });
+//mine
+
+
+
 // let transporter = nodemailer.createTransport(smtpTransport({
 //   name: "www.ddcif.com",
 //   host: "smtp.ddcif.com",
@@ -30,12 +47,12 @@ transporter.verify(function(error, success) {
     console.log("Server is ready to take our messages");
   }
 });
-const send = ({ email, name, text }) => {
+const send = ({ email, name, phone, text }) => {
   const from = name && email ? `${name} <${email}>` : `${name || email}`
   const message = {
     from,
     to: 'formweb@ddcif.com',
-    subject: `New message from ${from} at creating-contact-forms-with-nodemailer-and-react`,
+    subject: `New message from ${from}, phone number ${phone}`,
     text,
     replyTo: from
   };
