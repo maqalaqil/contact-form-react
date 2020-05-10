@@ -1,31 +1,36 @@
 import React from 'react'
 
-import './ContactForm.css'
-
 const ContactForm = () => (
   <form className="contact-form" method="POST" action="/contact">
     <div className="form-field">
       <label htmlFor="name">
-        <div className="label-content">Name:</div>
-        <input type="text" name="name" required />
+        <div className="label-content">Full name</div>
+        <input type="text" name="name" placeholder="Enter your name" required />
       </label>
     </div>
 
     <div className="form-field">
       <label htmlFor="email">
-        <div className="label-content">Email:</div>
-        <input type="email" name="email" required />
+        <div className="label-content">Email</div>
+        <input type="email" name="email" placeholder="Enter your email" required />
+      </label>
+    </div>
+
+    <div className="form-field">
+      <label htmlFor="phone">
+        <div className="label-content">Phone Number</div>
+        <input type="text" name="phone"   placeholder="Enter your Phone Number" required />
       </label>
     </div>
 
     <div className="form-field">
       <label htmlFor="message">
-        <div className="label-content">Message:</div>
-        <textarea className="stretch" name="message" rows="5" required />
+        <div className="label-content">Message</div>
+        <textarea className="stretch" name="message" cols="30" rows="10"  placeholder="Enter your message" required />
       </label>
     </div>
 
-    <button type="submit">Send</button>
+    <button type="submit">SUBMIT</button>
 
     <div>
       { window.location.hash === '#success' &&

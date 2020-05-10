@@ -13,13 +13,13 @@ app.get('*', (req, res) => {
 })
 
 app.post('/contact', (req, res) => {
-  const { email = '', name = '', message = '' } = req.body
+  const { email = '', name = '', phone='', message = '' } = req.body
 
-  mailer({ email, name, text: message }).then(() => {
-    console.log(`Sent the message "${message}" from <${name}> ${email}.`);
+  mailer({ email, name, phone, text: message }).then(() => {
+    console.log(`Sent the message "${message}" from <${name}> ${email}, phone number ${phone}.`);
     res.redirect('/#success');
   }).catch((error) => {
-    console.log(`Failed to send the message "${message}" from <${name}> ${email} with the error ${error && error.message}`);
+    console.log(`Failed to send the message "${message}" from <${name}> ${email}, phone number ${phone} with the error ${error && error.message}`);
     res.redirect('/#error');
   })
 })
