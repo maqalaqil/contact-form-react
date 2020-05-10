@@ -5,7 +5,7 @@ import config from './config'
 let transporter = nodemailer.createTransport({
   name: "www.ddcif.com",
   host: "smtp.ddcif.com",
-  port: 587,
+  port:  587,
  secure: false,// false for other ports
   auth: {
     user: "formweb@ddcif.com", // generated ethereal user

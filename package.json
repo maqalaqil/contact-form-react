@@ -1,5 +1,6 @@
 {
-  "name": "creating-contact-forms-with-nodemailer-and-react",
+  "name": "ddcif",
+  "homepage" : "http://www.ddcif.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
